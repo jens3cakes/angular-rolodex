@@ -1,0 +1,12 @@
+<h1>Contacts Page</h1>
+
+<div>{{title}}</div>
+ <div *ngFor="let contact of contacts"> 
+  {{contact.name | json}}
+  <br>
+  {{contact.email | json}}
+</div>
+
+
+
+

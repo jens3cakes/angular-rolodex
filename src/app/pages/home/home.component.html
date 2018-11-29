@@ -1,0 +1,38 @@
+<h1>{{title}}</h1>
+
+<h3> {{loginFormData.name}} </h3>
+<br>
+<h3> {{loginFormData.email}} </h3>
+<br>
+<h3> {{loginFormData.password}} </h3>
+
+<form>
+<div>
+<label for="name">Name:</label>
+<br>
+<input type="text" name="name" id="name" #name="ngModel" [(ngModel)]= "loginFormData.name">
+</div>
+<br>
+<br>
+<div>
+  <label for="email">Email:</label>
+  <br>
+  <input type="text" name="email" id="email" #email="ngModel" [(ngModel)]="loginFormData.email" >
+</div>
+<br>
+<br>
+<div>
+  <label for="password">Password:</label>
+  <br>
+  <input type="text" name="password" id="password" #password="ngModel" [(ngModel)]="loginFormData.password">
+</div>
+{{loginFormData | json}}
+<br>
+<br>
+<button (click)="submitLoginForm()">Submit</button>
+</form>
+
+
+
+
+
