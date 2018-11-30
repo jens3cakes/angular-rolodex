@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import {HeaderComponent} from './component/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactsComponent } from './pages/contacts/contacts.component'
+import { AddContactComponent } from './pages/addContact/addContact.component';
+import { RegistrationComponent } from "./pages/registration/registration.component";
+
 
 
 @NgModule({
@@ -16,7 +19,9 @@ import { ContactsComponent } from './pages/contacts/contacts.component'
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    ContactsComponent
+    ContactsComponent,
+    AddContactComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,

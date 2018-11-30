@@ -1,20 +1,29 @@
+<div>
 <ul>
   <li>
     <h2><a routerLink="">Login</a></h2>
   </li>
   <li>
-    <h2><a routerLink="/contacts">Contacts</a></h2>
+      <h2><a routerLink="/registration">Register</a></h2>
+    </li>
+  <li>
+    <h2><a *ngIf="user.isLoggedIn" routerLink="/contacts/">Contacts</a></h2>
   </li>
   <li>
-    <h2><a href="">Search</a></h2>
+    <h2><a *ngIf="user.isLoggedIn" routerLink="">Search</a></h2>
   </li>
   <li>
-    <h2><a href="">Add Contact</a></h2>
+    <h2><a *ngIf="user.isLoggedIn" routerLink="/addContact">Add Contact</a></h2>
   </li>
   <li>
-    <h2><a href="">Delete Contact</a></h2>
+    <h2><a *ngIf="user.isLoggedIn" routerLink="">Delete Contact</a></h2>
   </li>
   <li>
-    <h2><a href="">User Profile</a></h2>
+    <h2><a *ngIf="user.isLoggedIn" routerLink="">User Profile</a></h2>
+  </li>
+  <li>
+    <h2><a *ngIf="user.isLoggedIn" routerLink="">Logout</a></h2>
   </li>
 </ul>
+
+</div>

@@ -45,6 +45,21 @@ export class BackendService {
   getContacts(){
     return this.contacts
   }
+
+  login(user) {
+    return Promise.resolve({
+      id:user.id,
+      username: user.username
+    });
+  }
+
+  logout(){
+    return Promise.resolve({});
+  }
+
+  register(){
+    return Promise.resolve({});
+  }
 }
 
 
