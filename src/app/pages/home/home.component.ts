@@ -46,8 +46,14 @@ export class HomeComponent implements OnInit {
 
 login(){
   return this.auth.login(this.loginFormData)
+  .then(()=>{
+    this.session.getUser(this.loginFormData)
+  })
   .then(() => {
     return this.router.navigate(['/'])
+  })
+  .then(()=>{
+    return (this.loginFormData.name="", this.loginFormData.email="", this.loginFormData.password="");
   })
 }
 

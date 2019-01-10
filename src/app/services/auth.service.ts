@@ -26,7 +26,7 @@ export class AuthService {
     })
   }
 
-  register(){
-    return this.backend.register()
-  }
+  // register(){
+  //   return this.backend.register()
+  // }
 }

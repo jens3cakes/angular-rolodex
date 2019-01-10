@@ -2,20 +2,35 @@
 
 <form>
 <label for="name" >Name:</label>
-<input type="text" name="name" id="name">
+<input type="text" name="name" id="name" [(ngModel)]="addContactForm.name">
 <br>
 <label for="email">Email:</label>
-<input type="text" name="email" id="email">
-<br>
-<label for="address">Address:</label>
-<input type="text" name="address" id="address">
-<br>
-<label for="phoneNumber">Phone Number:</label>
-<input type="text" name="phoneNumber" id="phoneNumber">
+<input type="text" name="email" id="email" [(ngModel)]="addContactForm.email">
 <br>
 <label for="company">Company:</label>
-<input type="text" name="company" id="company">
+<input type="text" name="company" id="company" [(ngModel)]="addContactForm.company" >
 <br>
-<button>Submit</button>
+<label for="address">Address:</label>
+<input type="text" name="address" id="address" [(ngModel)]="addContactForm.address">
+<br>
+<label for="phoneNumber">Mobile:</label>
+<input type="text" name="phoneNumber" id="phoneNumber" [(ngModel)]="addContactForm.phoneNumber">
+<br>
+<label for="work">Work:</label>
+<input type="text" name="work" id="work" [(ngModel)]="addContactForm.work">
+<br>
+<label for="home">Home</label>
+<input type="text" name="home" id="home" [(ngModel)]="addContactForm.home">
+<br>
+<label for="twitter">Twitter</label>
+<input type="text" name="twitter" id="twitter" [(ngModel)]="addContactForm.twitter">
+<br>
+<label for="instagram">Instagram</label>
+<input type="text" name="instagram" id="instagram" [(ngModel)]="addContactForm.instagram">
+<br>
+<label for="github">Github</label>
+<input type="text" name="github" id="github" [(ngModel)]="addContactForm.github">
+<br>
+<button (click)="addContact($event)">Submit</button>
 
 </form>
