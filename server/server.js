@@ -10,7 +10,7 @@ const Contact = require('../server/db/Models/Contact');
 const User = require('../server/db/Models/User');
 
 const contactsRoute = require('./routes/contactsRoute');
-const userRoute = require('./routes/userRoute')
+const usersRoute = require('./routes/userRoute')
 
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
@@ -72,7 +72,7 @@ passport.use('local', new LocalStrategy((username, password, done) => {
 
 
 app.use('/api/contacts', contactsRoute);
-app.use('/api/users', userRoute,console.log(userRoute))
+app.use('/api/users', usersRoute)
 
 
 app.get('/smoke', (req, res) => {

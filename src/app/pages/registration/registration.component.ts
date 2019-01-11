@@ -27,9 +27,8 @@ export class RegistrationComponent {
     private session: SessionService
   ) { }
 
-  submitRegForm(e) {
-    e.preventDefault()
-    // console.log(this.regFormData)
+  submitRegForm() {
+    event.preventDefault();
     return this.backend.register(this.regFormData)
     .then(()=> {
        return this.session.setSession(this.regFormData)
@@ -37,9 +36,9 @@ export class RegistrationComponent {
       .then(() => {
         return this.router.navigate(['/'])
       })
-      .then(() => {
-        return this.backend.user.push(this.regFormData)
-      })
+      // .then(() => {
+      //   return this.backend.user.push(this.regFormData)
+      // })
   }
 
 
