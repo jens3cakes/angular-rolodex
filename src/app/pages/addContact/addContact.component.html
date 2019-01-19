@@ -1,35 +1,62 @@
 <h1>Add Contact Form</h1>
 
 <form>
-<label for="name" >Name:</label>
-<input type="text" name="name" id="name" [(ngModel)]="addContactForm.name">
+<label for="first_name" > First Name:</label>
+<input type="text" name="first_name" id="first_name" [(ngModel)]="addContactForm.first_name">
 <br>
-<label for="email">Email:</label>
-<input type="text" name="email" id="email" [(ngModel)]="addContactForm.email">
+<label for="last_name"> Last Name:</label>
+<input type="text" name="last_name" id="last_name" [(ngModel)]="addContactForm.last_name">
 <br>
-<label for="company">Company:</label>
-<input type="text" name="company" id="company" [(ngModel)]="addContactForm.company" >
+<label for="personal_email">Personal Email:</label>
+<input type="text" name="personal_email" id="personal_email" [(ngModel)]="addContactForm.personal_email">
 <br>
-<label for="address">Address:</label>
-<input type="text" name="address" id="address" [(ngModel)]="addContactForm.address">
+<label for="work_email">Work Email:</label>
+<input type="text" name="work_email" id="work_email" [(ngModel)]="addContactForm.work_email">
 <br>
-<label for="phoneNumber">Mobile:</label>
-<input type="text" name="phoneNumber" id="phoneNumber" [(ngModel)]="addContactForm.phoneNumber">
+<label for="company_name">Company:</label>
+<input type="text" name="company_name" id="company_name" [(ngModel)]="addContactForm.company_name" >
 <br>
-<label for="work">Work:</label>
-<input type="text" name="work" id="work" [(ngModel)]="addContactForm.work">
+<label for="work_number">Work Number:</label>
+<input type="text" name="work_number" id="work_number" [(ngModel)]="addContactForm.work_number">
 <br>
-<label for="home">Home</label>
-<input type="text" name="home" id="home" [(ngModel)]="addContactForm.home">
+<label for="work_number_extension">Work Extension:</label>
+<input type="text" name="work_number_extension" id="work_number_extension" [(ngModel)]="addContactForm.work_number_extension">
 <br>
-<label for="twitter">Twitter</label>
-<input type="text" name="twitter" id="twitter" [(ngModel)]="addContactForm.twitter">
+<label for="work_cell_number">Work Cellphone Number:</label>
+<input type="text" name="work_cell_number" id="work_cell_number" [(ngModel)]="addContactForm.work_cell_number">
 <br>
-<label for="instagram">Instagram</label>
-<input type="text" name="instagram" id="instagram" [(ngModel)]="addContactForm.instagram">
+<label for="work_street_address">Work Street Address:</label>
+<input type="text" name="work_street_address" id="work_street_address" [(ngModel)]="addContactForm.work_street_address">
 <br>
-<label for="github">Github</label>
-<input type="text" name="github" id="github" [(ngModel)]="addContactForm.github">
+<label for="work_state_address">State:</label>
+<input type="text" name="work_state_address" id="work_state_address" [(ngModel)]="addContactForm.work_state_address">
+<br>
+<label for="work_country_address">Country:</label>
+<input type="text" name="work_country_address" id="work_country_address" [(ngModel)]="addContactForm.work_country_address">
+<br>
+<label for="home_phone_number">Home Phone Number:</label>
+<input type="text" name="home_phone_number" id="home_phone_number" [(ngModel)]="addContactForm.home_phone_number">
+<br>
+<label for="personal_cellphone_number">Personal Cellphone Number:</label>
+<input type="text" name="personal_cellphone_number" id="personal_cellphone_number" [(ngModel)]="addContactForm.personal_cellphone_number">
+<br>
+<label for="home_street_address">Home Street Address:</label>
+<input type="text" name="home_street_address" id="home_street_address" [(ngModel)]="addContactForm.home_street_address">
+<br>
+<label for="home_state_address">State:</label>
+<input type="text" name="home_state_address" id="home_state_address" [(ngModel)]="addContactForm.home_state_address">
+<br>
+<label for="home_country_address">Country:</label>
+<input type="text" name="home_country_address" id="home_country_address" [(ngModel)]="addContactForm.work_country_address">
+<br>
+<label for="type_of_business">Type of Business:</label>
+<input type="text" name="type_of_business" id="type_of_business" [(ngModel)]="addContactForm.type_of_business">
+<br>
+<label for="type_of_contact">Type of Contact:</label>
+<input type="text" name="type_of_contact" id="type_of_contact" [(ngModel)]="addContactForm.type_of_contact">
+<br>
+<label for="notes">Notes</label>
+<input type="text" name="notes" id="notes" [(ngModel)]="addContactForm.notes">
 <br>
 <button (click)="addContact($event)">Submit</button>
 

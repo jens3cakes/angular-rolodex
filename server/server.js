@@ -45,7 +45,7 @@ passport.serializeUser((username, done) => {
 
 passport.deserializeUser((user, cb) => {
   console.log('deserialize', user)
-  return beforeAll(null, user)
+  return cb(null, user)
 })
 
 passport.use('local', new LocalStrategy((username, password, done) => {
@@ -70,9 +70,14 @@ passport.use('local', new LocalStrategy((username, password, done) => {
     });
 }));
 
+app.post('/api/users/login',passport.authenticate('local', {failureRedirect: '', failureMessage: 'Username or password, error.'}),
+function(req, res){
+  res.send(req.user)
 
+})
 app.use('/api/contacts', contactsRoute);
 app.use('/api/users', usersRoute)
+
 
 
 app.get('/smoke', (req, res) => {

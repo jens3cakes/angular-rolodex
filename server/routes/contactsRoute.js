@@ -16,4 +16,40 @@ router.get('/', (req, res)=>{
     return res.status(500),json({message: err.message})
   })
 })
+
+router.post('/', (req, res)=>{
+  let { first_name, last_name, personal_email, work_email, company_name, work_number, work_number_extension, work_cell_number, work_street_address, work_state_address, work_country_address, personal_cellphone_number, home_phone_number, home_street_address, home_state_address, home_country_address, type_of_business, type_of_contact, notes } = req.body;
+  
+  
+  const typeOfBusiness = parseInt(type_of_business);
+  const typeOfContact = parseInt(type_of_contact);
+  
+  return new Contact ({
+    
+    first_name,
+    last_name,
+    personal_email,
+    work_email,
+    company_name,
+    work_number,
+    work_number_extension,
+    work_cell_number,
+    work_street_address,
+    work_state_address,
+    work_country_address,
+    personal_cellphone_number,
+    home_phone_number,
+    home_street_address,
+    home_state_address,
+    home_country_address,
+    type_of_business: typeOfBusiness,
+    type_of_contact: typeOfContact,
+    notes,
+  })
+  .save()
+  .then((contact)=>{
+    return res.json(contact)
+  })
+
+})
 module.exports = router;

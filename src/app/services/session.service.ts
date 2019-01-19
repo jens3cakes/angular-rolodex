@@ -6,19 +6,17 @@ import { Injectable } from '@angular/core'
 export class SessionService{
   user: {
     id:number,
-    name: string,
-    email:string,
-    username:string,
-    password: string,
-    address: string,
+    first_name: string,
+    last_name: string,
+    email: string,
+    username: string,
     isLoggedIn: boolean
   } = {
-    id: 1,
-    name:'jennifer',
-    email:'jhikichi001@gmail.com',
-    username: 'jens3cakes',
-    password:'password',
-    address:'123 somewhere ave',
+    id: null,
+    first_name: '',
+    last_name: '',
+    email: '',
+    username: '',
     isLoggedIn: false
   };
 
@@ -32,11 +30,10 @@ export class SessionService{
 
   setSession(user) {
     this.user.id = user.id;
-    this.user.name = user.name;
+    this.user.first_name = user.first_name;
+    this.user.last_name = user.last_name
     this.user.email= user.email;
     this.user.username = user.username;
-    this.user.password = user.password;
-    this.user.address = user.address;
     this.user.isLoggedIn = true;
 
     localStorage.setItem('user', JSON.stringify(this.user));
