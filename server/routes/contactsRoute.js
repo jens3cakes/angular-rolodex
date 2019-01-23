@@ -18,14 +18,15 @@ router.get('/', (req, res)=>{
 })
 
 router.post('/', (req, res)=>{
-  let { first_name, last_name, personal_email, work_email, company_name, work_number, work_number_extension, work_cell_number, work_street_address, work_state_address, work_country_address, personal_cellphone_number, home_phone_number, home_street_address, home_state_address, home_country_address, type_of_business, type_of_contact, notes } = req.body;
-  
+  let { user_id, first_name, last_name, personal_email, work_email, company_name, work_number, work_number_extension, work_cell_number, work_street_address, work_state_address, work_country_address, personal_cellphone_number, home_phone_number, home_street_address, home_state_address, home_country_address, type_of_business, type_of_contact, notes } = req.body;
+  console.log('hello',user_id, req.body)
   
   const typeOfBusiness = parseInt(type_of_business);
   const typeOfContact = parseInt(type_of_contact);
+  const userId = parseInt(user_id);
   
   return new Contact ({
-    
+    user_id: userId,
     first_name,
     last_name,
     personal_email,
@@ -50,6 +51,8 @@ router.post('/', (req, res)=>{
   .then((contact)=>{
     return res.json(contact)
   })
-
+.catch((err)=>{
+  return res.status(500),res.json({message: err.message})
+})
 })
 module.exports = router;

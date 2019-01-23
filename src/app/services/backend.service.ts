@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SessionService } from '../services/session.service'
+import { resetComponentState } from '@angular/core/src/render3/state';
 
 @Injectable({
   providedIn: 'root',
@@ -64,9 +65,11 @@ export class BackendService {
 
   };
 
-  addToContact(contact) {
+  addToContact(contact, user) {
+    console.log(user, contact)
     const contactUrl = this.baseUrl + 'api/contacts'
     return this.http.post(contactUrl, {
+      user_id: user,
       first_name: contact.first_name,
       last_name: contact.last_name,
       personal_email: contact.personal_email,
@@ -88,6 +91,9 @@ export class BackendService {
       notes: contact.notes,
     })
     .toPromise()
+    .then((contact)=>{
+    console.log(contact)
+    })
     
   }
 }

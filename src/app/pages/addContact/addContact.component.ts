@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BackendService } from '../../services/backend.service'
-
+import { SessionService } from '../../services/session.service'
 
 @Component({
   templateUrl: './addContact.component.html',
   styleUrls: ['./addContact.component.html']
 })
+
 
 export class AddContactComponent {
   addContactForm: {
@@ -16,7 +17,7 @@ export class AddContactComponent {
     work_email: string,
     company_name: string,
     work_number: string,
-    work_number_extension: string,
+    work_number_extension: number,
     work_cell_number: string,
     work_street_address: string,
     work_state_address: string,
@@ -36,7 +37,7 @@ export class AddContactComponent {
     work_email: "",
     company_name: "",
     work_number: "",
-    work_number_extension: "",
+    work_number_extension: null,
     work_cell_number: "",
     work_street_address: "",
     work_state_address: "",
@@ -54,15 +55,14 @@ export class AddContactComponent {
 
   constructor(
     private router: Router,
-    private backend: BackendService
+    private backend: BackendService,
+    private session: SessionService
   ) {
   }
   addContact(e) {
     e.preventDefault()
-    return this.backend.addToContact(this.addContactForm)
-      .then(() => {
-        this.backend.contacts.push(this.addContactForm)
-      })
+    console.log(this.session.user.id)
+    return this.backend.addToContact(this.addContactForm, this.session.user.id)
       .then(() => {
         this.router.navigate(['/contacts'])
       })
