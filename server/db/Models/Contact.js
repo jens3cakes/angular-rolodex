@@ -10,5 +10,8 @@ user_id() {
 type_of_business_id(){
   return this.belongsTo("TypeOfBusiness", "id" )
 }
+type_of_contact_id(){
+  return this.belongsTo("TypeOfContact", "id")
+}
 }
 module.exports = bookshelf.model("Contact", Contact);
