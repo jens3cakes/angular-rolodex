@@ -35,8 +35,6 @@ export class HomeComponent implements OnInit {
     private session: SessionService,
     private auth: AuthService) {
 
-    this.backend.getContacts()
-
 
   }
   //methods go here

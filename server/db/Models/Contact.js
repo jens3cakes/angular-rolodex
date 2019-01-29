@@ -7,5 +7,8 @@ class Contact extends bookshelf.Model {
 user_id() {
   return this.belongsTo("User", "user_id", "id")
 }
+type_of_business_id(){
+  return this.belongsTo("TypeOfBusiness", "id" )
+}
 }
 module.exports = bookshelf.model("Contact", Contact);

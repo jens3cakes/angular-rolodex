@@ -2,25 +2,38 @@
 
 <div>{{title}}</div>
  <div *ngFor="let contact of contacts"> 
-  <a>{{contact.name}}</a>
+   <br>
+  <div>Name: {{contact.first_name}} <span>{{contact.last_name}}</span></div>
   <br>
-  <a>{{contact.email}}</a>
+  <div>Personal Email: {{contact.personal_email}}</div>
   <br>
-  <a>{{contact.mobile}}</a>
+  <div>Personal Cellphone: {{contact.personal_cellphone_number}}</div>
   <br>
-  <a>{{contact.home}}</a>
+  <div>Home Phone Number: {{contact.home_phone_number}}</div>
   <br>
-  <a>{{contact.work}}</a>
+  <div>Home Address: {{contact.home_street_address}}</div>
   <br>
-  <a>{{contact.company}}</a>
+  <div>State: {{contact.home_state_address}} <span> Country: {{contact.home_country_address}}</span></div>
   <br>
-  <a>{{contact.address}}</a>
+  <div>Company Name: {{contact.company_name}}</div>
   <br>
-  <a>{{contact.twitter}}</a>
+  <div>Work Email: {{contact.work_email}}</div>
   <br>
-  <a>{{contact.instagram}}</a>
+  <div>Work Phone Number: {{contact.work_number}} <span> Ext: {{contact.work_number_extension}}</span></div>
   <br>
-  <a>{{contact.github}}</a>
+  <div>Work Cellphone Number: {{contact.work_cell_number}}</div>
+<br>
+<div>Work Address: {{contact.work_street_address}}</div>
+<br>
+<div>State: {{contact.work_state_address}} <span> Country: {{contact.work_country_address}}</span></div>
+<br>
+<div> Type of Business: {{contact.type_of_business}}</div>
+<br>
+<div>Type of Contact: {{contact.type_of_contact}}</div>
+<br>
+<div>Notes: {{contact.notes}}</div>
+<br>
+<br>
 </div>
 
 

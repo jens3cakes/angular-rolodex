@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const Contact = require('../db/Models/Contact');
-
+const TypeOfBusiness = require('../db/Models/TypeOfBusiness')
 router.get('/', (req, res)=>{
   return new Contact()
   .fetchAll({
     require: true,
-    withRelated: ['user_id']
+    withRelated: ['user_id', 'type_of_business_id']
   })
   .then(contacts => {
     const contactsObj = contacts.serialize();

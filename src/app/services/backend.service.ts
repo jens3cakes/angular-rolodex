@@ -25,8 +25,10 @@ export class BackendService {
     return this.http.get(`${this.baseUrl}/people/4`).toPromise();
   }
 
-  getContacts() {
-    return this.contacts
+  getContacts(id) {
+    const contactUrl = this.baseUrl + 'api/contacts'
+    return this.http.get(contactUrl)
+    .toPromise()
   }
 
   login(user) {
