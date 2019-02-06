@@ -10,6 +10,8 @@ export class SessionService{
     last_name: string,
     email: string,
     username: string,
+    cellphone_number: string,
+    home_phone_number: string,
     isLoggedIn: boolean
   } = {
     id: null,
@@ -17,6 +19,8 @@ export class SessionService{
     last_name: '',
     email: '',
     username: '',
+    cellphone_number: '',
+    home_phone_number: '',
     isLoggedIn: false
   };
 
@@ -34,6 +38,8 @@ export class SessionService{
     this.user.last_name = user.last_name
     this.user.email= user.email;
     this.user.username = user.username;
+    this.user.cellphone_number = user.cellphone_number;
+    this.user.home_phone_number = user.home_phone_number;
     this.user.isLoggedIn = true;
 
     localStorage.setItem('user', JSON.stringify(this.user));

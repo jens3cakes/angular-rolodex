@@ -46,7 +46,7 @@ login(){
     this.session.getUser(this.loginFormData)
   })
   .then(() => {
-    return this.router.navigate(['/'])
+    return this.router.navigate(['/userProfile'])
   })
   
 }

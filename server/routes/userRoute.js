@@ -53,4 +53,26 @@ router.post('/', (req, res)=>{
     });
   })
 });
+
+router.put('/editProfile', (req,res)=>{
+  let{id,first_name, last_name, email, cellphone_number, home_phone_number}=req.body;
+  console.log(id)
+  return new User()
+  .where({id:id})
+  .fetch({require:true})
+  .then(user=>{
+    user.save({
+      first_name,
+       last_name,
+       email,
+       cellphone_number,
+       home_phone_number
+    })
+    return user
+  })
+  .then(user=>{
+    console.log('put',user)
+    return res.json(user)
+  })
+})
 module.exports = router;

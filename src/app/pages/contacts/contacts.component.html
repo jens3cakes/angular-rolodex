@@ -1,41 +1,36 @@
 <h1>Contacts Page</h1>
 
-<div>{{title}}</div>
- <div *ngFor="let contact of contacts"> 
-   <br>
-  <div>Name: {{contact.first_name}} <span>{{contact.last_name}}</span></div>
+<div *ngFor="let contact of contacts" class="contacts">
   <br>
-  <div>Personal Email: {{contact.personal_email}}</div>
+  <div><strong> Name:  </strong> {{contact.first_name}} <span>{{contact.last_name}}</span></div>
   <br>
-  <div>Personal Cellphone: {{contact.personal_cellphone_number}}</div>
+  <div><strong>Personal Email:  </strong>  {{contact.personal_email}}</div>
   <br>
-  <div>Home Phone Number: {{contact.home_phone_number}}</div>
+  <div><strong>Personal Cellphone:  </strong>  {{contact.personal_cellphone_number}}</div>
   <br>
-  <div>Home Address: {{contact.home_street_address}}</div>
+  <div><strong>Home Phone Number:  </strong> {{contact.home_phone_number}}</div>
   <br>
-  <div>State: {{contact.home_state_address}} <span> Country: {{contact.home_country_address}}</span></div>
+  <div><strong>Home Address:  </strong> {{contact.home_street_address}}</div>
   <br>
-  <div>Company Name: {{contact.company_name}}</div>
+  <div><strong>State:  </strong> {{contact.home_state_address}} <span> <strong>Country:  </strong> {{contact.home_country_address}}</span></div>
   <br>
-  <div>Work Email: {{contact.work_email}}</div>
+  <div><strong>Company Name:  </strong> {{contact.company_name}}</div>
   <br>
-  <div>Work Phone Number: {{contact.work_number}} <span> Ext: {{contact.work_number_extension}}</span></div>
+  <div><strong>Work Email:  </strong> {{contact.work_email}}</div>
   <br>
-  <div>Work Cellphone Number: {{contact.work_cell_number}}</div>
-<br>
-<div>Work Address: {{contact.work_street_address}}</div>
-<br>
-<div>State: {{contact.work_state_address}} <span> Country: {{contact.work_country_address}}</span></div>
-<br>
-<div> Type of Business: {{contact.type_of_business_id.type}}</div>
-<br>
-<div>Type of Contact: {{contact.type_of_contact_id.type}}</div>
-<br>
-<div>Notes: {{contact.notes}}</div>
-<br>
-<br>
+  <div><strong>Work Phone Number:  </strong> {{contact.work_number}} <span> <strong>Ext:  </strong> {{contact.work_number_extension}}</span></div>
+  <br>
+  <div><strong>Work Cellphone Number:  </strong> {{contact.work_cell_number}}</div>
+  <br>
+  <div><strong>Work Address:  </strong> {{contact.work_street_address}}</div>
+  <br>
+  <div><strong>State:  </strong> {{contact.work_state_address}} <span> <strong>Country:  </strong> {{contact.work_country_address}}</span></div>
+  <br>
+  <div> <strong>Type of Business:  </strong> {{contact.type_of_business_id.type}}</div>
+  <br>
+  <div><strong>Type of Contact:  </strong> {{contact.type_of_contact_id.type}}</div>
+  <br>
+  <div><strong>Notes:  </strong> {{contact.notes}}</div>
+  <br>
+  <br>
 </div>
-
-
-
-

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SessionService } from '../services/session.service'
-import { resetComponentState } from '@angular/core/src/render3/state';
 
 @Injectable({
   providedIn: 'root',
@@ -17,13 +16,6 @@ export class BackendService {
     private http: HttpClient, private session: SessionService) {
       
     }
-     
-
-  
-
-  getPeople() {
-    return this.http.get(`${this.baseUrl}/people/4`).toPromise();
-  }
 
   getContacts(id) {
     const contactUrl = this.baseUrl + 'api/contacts'
@@ -96,8 +88,26 @@ export class BackendService {
     .then((contact)=>{
     console.log(contact)
     })
-    
   }
+
+  editProfileInfo(user){
+    console.log(user)
+    const profileUrl = this.baseUrl + 'api/users/editProfile'
+    return this.http.put(profileUrl, {
+      id: user.id,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      email: user.email,
+      username: user.username,
+      password: user.password,
+      cellphone_number: user.cellphone_number,
+      home_phone_number: user.home_phone_number})
+      .toPromise()
+      .then((user)=>{
+        console.log(user)
+        return this.session.setSession(user)
+      })
+    }
 }
 
 
