@@ -14,25 +14,25 @@ export class BackendService {
 
   constructor(
     private http: HttpClient, private session: SessionService) {
-      
-    }
+
+  }
 
   getContacts(id) {
     const contactUrl = this.baseUrl + 'api/contacts'
     return this.http.get(contactUrl)
-    .toPromise()
+      .toPromise()
   }
 
   login(user) {
     const loginUrl = this.baseUrl + 'api/users/login'
-    return this.http.post(loginUrl,{
+    return this.http.post(loginUrl, {
       username: user.username,
       password: user.password
     })
-    .toPromise()
-    .then((resp)=>{
-      return this.session.setSession(resp);
-    })
+      .toPromise()
+      .then((resp) => {
+        return this.session.setSession(resp);
+      })
   };
 
   logout() {
@@ -84,13 +84,13 @@ export class BackendService {
       type_of_contact: contact.type_of_contact,
       notes: contact.notes,
     })
-    .toPromise()
-    .then((contact)=>{
-    console.log(contact)
-    })
+      .toPromise()
+      .then((contact) => {
+        console.log(contact)
+      })
   }
 
-  editProfileInfo(user){
+  editProfileInfo(user) {
     console.log(user)
     const profileUrl = this.baseUrl + 'api/users/editProfile'
     return this.http.put(profileUrl, {
@@ -101,13 +101,28 @@ export class BackendService {
       username: user.username,
       password: user.password,
       cellphone_number: user.cellphone_number,
-      home_phone_number: user.home_phone_number})
+      home_phone_number: user.home_phone_number
+    })
       .toPromise()
-      .then((user)=>{
+      .then((user) => {
         console.log(user)
         return this.session.setSession(user)
       })
-    }
+  }
+
+  editContactInfo(contact) {
+    console.log(contact)
+    const contactUrl = this.baseUrl + `api/contacts/editContact/${contact}`
+    // return this.http.post(contactUrl,{
+    //   id:contact
+    // })
+    return this.http.get(contactUrl)
+      .toPromise()
+  }
+
+  editContact(data){
+console.log(data)
+  }
 }
 
 

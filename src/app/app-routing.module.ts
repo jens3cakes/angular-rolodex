@@ -7,6 +7,7 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { AddContactComponent } from './pages/addContact/addContact.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { UserProfileComponent } from './pages/userProfile/userProfile.component';
+import { EditContactComponent } from './pages/editContact/editContact.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
 { path: 'addContact', component: AddContactComponent},
 { path: 'registration', component: RegistrationComponent},
 { path: 'userProfile', component: UserProfileComponent},
+{ path: 'editContact/:id', component: EditContactComponent},
 { path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

@@ -24,6 +24,7 @@ export class SessionService{
     isLoggedIn: false
   };
 
+  
   constructor(){
     const userData = localStorage.getItem('user');
     if(userData) {
