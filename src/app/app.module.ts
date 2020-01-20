@@ -11,8 +11,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContactsComponent } from './pages/contacts/contacts.component'
 import { AddContactComponent } from './pages/addContact/addContact.component';
 import { RegistrationComponent } from "./pages/registration/registration.component";
-
-
+import { UserProfileComponent } from "./pages/userProfile/userProfile.component";
+import { EditContactComponent } from './pages/editContact/editContact.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,9 @@ import { RegistrationComponent } from "./pages/registration/registration.compone
     HomeComponent,
     ContactsComponent,
     AddContactComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    UserProfileComponent,
+    EditContactComponent
   ],
   imports: [
     BrowserModule,
@@ -33,3 +35,7 @@ import { RegistrationComponent } from "./pages/registration/registration.compone
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+

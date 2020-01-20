@@ -14,9 +14,8 @@ export class HomeComponent implements OnInit {
     console.log('OnInit has fired');
   };
 
-  loginFormData: { name: string, email: string, password: string } = {
-    name: '',
-    email: '',
+  loginFormData: { username: string, password: string } = {
+    username: '',
     password: ''
   }
 
@@ -27,10 +26,8 @@ export class HomeComponent implements OnInit {
 
   title: string = 'Home Page/Login';
 
-  characters: string[] = []
   show: boolean = false;
   contacts: object;
-
 
   constructor(
     private backend: BackendService,
@@ -38,17 +35,20 @@ export class HomeComponent implements OnInit {
     private session: SessionService,
     private auth: AuthService) {
 
-    this.backend.getContacts()
-
 
   }
   //methods go here
 
 login(){
-  return this.auth.login(this.loginFormData)
-  .then(() => {
-    return this.router.navigate(['/'])
+  console.log(this.loginFormData)
+  return this.backend.login(this.loginFormData)
+  .then(()=>{
+    this.session.getUser(this.loginFormData)
   })
+  .then(() => {
+    return this.router.navigate(['/userProfile'])
+  })
+  
 }
 
 }

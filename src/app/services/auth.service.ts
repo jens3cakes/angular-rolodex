@@ -12,12 +12,10 @@ export class AuthService {
     private session: SessionService
   ){}
 
-  login(user) {
-    return this.backend.login(user)
-    .then((response) => {
-      return this.session.setSession(response);
-    });
-  }
+  loginCheck(user) {
+    this.session.setSession(user);
+    };
+  
 
   logout() {
     return this.backend.logout()
@@ -26,7 +24,7 @@ export class AuthService {
     })
   }
 
-  register(){
-    return this.backend.register()
-  }
+  // register(){
+  //   return this.backend.register()
+  // }
 }

@@ -1,0 +1,34 @@
+<h1>This is your profile, {{user.first_name}}.</h1>
+<div *ngIf="!editButtonStatus">
+  {{user.first_name}} <span>{{user.last_name}}</span>
+  <br>
+  {{user.email}}
+  <br>
+  {{user.username}}
+  <br>
+  {{user.cellphone_number}}
+  <br>
+  {{user.home_phone_number}}
+  <br>
+  <button (click)="editButton()">Edit Profile</button>
+</div>
+
+
+<div *ngIf="editButtonStatus">
+  <label for="first_name">First Name:</label>
+  <input type="text" name="first_name" id="first_name" placeholder="{{user.first_name}}" [(ngModel)]="editUserForm.first_name">
+  <br>
+  <label for="last_name">Last Name:</label>
+  <input type="text" name="last_name" id="last_name" placeholder="{{user.last_name}}" [(ngModel)]="editUserForm.last_name">
+  <br>
+  <label for="email">Email:</label>
+  <input type="text" name="email" id="email" placeholder="{{user.email}}" [(ngModel)]="editUserForm.email">
+  <br>
+  <label for="cellphone_number">Cellphone:</label>
+  <input type="text" name="cellphone_number" id="cellphone_number" placeholder="{{user.cellphone_number}}" [(ngModel)]="editUserForm.cellphone_number">
+  <br>
+  <label for="home_phone_number">Home Phone Number:</label>
+  <input type="text" name="home_phone_number" id="home_phone_number" placeholder="{{user.home_phone_number}}" [(ngModel)]="editUserForm.home_phone_number">
+  <br>
+  <button (click)="editForm($event)">Edit</button>
+</div>

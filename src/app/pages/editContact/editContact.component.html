@@ -1,0 +1,86 @@
+<form>
+<div class="editContactForm">
+    <input hidden type="number" name="id" id="id" [(ngModel)]="editContactForm.id" value="{{contact.id}}">
+    <br>
+    <label for="first_name">First Name: </label>
+    <input type="text" name="first_name" [(ngModel)]="first_name" placeholder="{{contact.first_name}}">
+    <br>
+    <label for="last_name">Last Name: </label>
+    <input type="text" name="last_name" [(ngModel)]="editContactForm.last_name" placeholder="{{contact.last_name}}">
+    <br>
+    <label for="personal_email">Personal Email: </label>
+    <input type="text" name="personal_email" [(ngModel)]="editContactForm.personal_email" placeholder="{{contact.personal_email}}">
+    <br>
+    <label for="personal_cellphone_number">Personal Cellphone: </label>
+    <input type="text" name="personal_cellphone_number" [(ngModel)]="editContactForm.personal_cellphone_number"
+      placeholder="{{contact.personal_cellphone_number}}">
+    <br>
+    <label for="home_phone_number">Home Phone Number: </label>
+    <input type="text" name="home_phone_number" [(ngModel)]="editContactForm.home_phone_number" placeholder="{{contact.home_phone_number}}">
+    <br>
+    <label for="home_street_address">Home Address: </label>
+    <input type="text" name="home_street_address" [(ngModel)]="editContactForm.home_street_address" placeholder="{{contact.home_street_address}}">
+    <br>
+    <label for="home_state_address">State: </label>
+    <input type="text" name="home_state_address" [(ngModel)]="editContactForm.home_state_address" placeholder="{{contact.home_state_address}}">
+    <br>
+    <label for="home_country_address">Country: </label>
+    <input type="text" name="home_country_address" [(ngModel)]="editContactForm.home_country_address" placeholder="{{contact.home_country_address}}">
+    <br>
+    <label for="company_name">Company Name: </label>
+    <input type="text" name="company_name" [(ngModel)]="editContactForm.company_name" placeholder="{{contact.company_name}}">
+    <br>
+    <label for="work_email">Work Email: </label>
+    <input type="text" name="work_email" [(ngModel)]="editContactForm.work_email" placeholder="{{contact.work_email}}">
+    <br>
+    <label for="work_number"> Work Phone Number: </label>
+    <input type="text" name="work_number" [(ngModel)]="editContactForm.work_number" placeholder="{{contact.work_number}}">
+    <label for="work_number_extension">Ext: </label>
+    <input type="text" name="work_number_extension" [(ngModel)]="editContactForm.work_number_extension" placeholder="{{contact.work_number_extension}}">
+    <br>
+    <label for="work_cell_number">Work Cellphone Number: </label>
+    <input type="text" name="work_cell_number" [(ngModel)]="editContactForm.work_cell_number" placeholder="{{contact.work_cell_number}}">
+    <br>
+    <label for="work_street_address">Work Address: </label>
+    <input type="text" name="work_street_address" [(ngModel)]="editContactForm.work_street_address" placeholder="{{contact.work_street_address}}">
+    <br>
+    <label for="work_country_address">Country: </label>
+    <input type="text" name="work_country_address" [(ngModel)]="editContactForm.work_country_address" placeholder="{{contact.work_country_address}}">
+    <br>
+    <label for="type_of_contact">Type of Contact:</label>
+    <select name="type_of_contact" id="type_of_contact" [(ngModel)]="editContactForm.type_of_contact">
+      <option value="">---Please Select Only One---</option>
+      <option value="1">Personal</option>
+      <option value="2">Business</option>
+      <option value="3">Family</option>
+    </select>
+    <br>
+    <label for="type_of_business_id">Type of Business:</label>
+    <select name="type_of_business_id" id="type_of_business_id" [(ngModel)]="editContactForm.type_of_business_id">
+      <option value="">---Please Select Only One---</option>
+      <option value="1">Automotive</option>
+      <option value="2">Electrical</option>
+      <option value="3">Plumbing</option>
+      <option value="4">Landscaping</option>
+      <option value="5">Retail</option>
+      <option value="6">Childcare</option>
+      <option value="7">Painting</option>
+      <option value="8">Carpentry</option>
+      <option value="9">Cleaning</option>
+      <option value="10">Food Service</option>
+      <option value="11">Banking</option>
+      <option value="12">Hospitality</option>
+      <option value="13">Medical</option>
+      <option value="14">Computer Hardware</option>
+      <option value="15">Computer Software</option>
+      <option value="16">Real Estate</option>
+      <option value="17">Law</option>
+      <option value="18">Other</option>
+    </select>
+    <br>
+    <label for="notes">Notes: </label>
+    <input type="text" name="notes" [(ngModel)]="editContactForm.notes" placeholder="{{contact.notes}}">
+    <br>
+    <button (click)="editContactButton($event)">Edit Contact</button>
+  </div>
+</form>
