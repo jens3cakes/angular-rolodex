@@ -4,8 +4,11 @@ const Contact = require('../db/Models/Contact');
 const TypeOfBusiness = require('../db/Models/TypeOfBusiness')
 const TypeOfContact = require('../db/Models/TypeOfContact')
 
-router.get('/', (req, res) => {
+router.get('/:id', (req, res) => {
+  let userId = parseInt(req.params.id)
+  console.log('contact', typeof userId)
   return new Contact()
+    .where({ user_id: userId })
     .fetchAll({
       require: true,
       withRelated: ['user_id', 'type_of_business_id', 'type_of_contact_id']
@@ -58,35 +61,35 @@ router.post('/', (req, res) => {
     })
 })
 
-// router.post('/editContact', (req, res) => {
+router.post('/editContact', (req, res) => {
 
-//   // const typeOfBusiness = parseInt(type_of_business);
-//   // const typeOfContact = parseInt(type_of_contact);
-//   // const userId = parseInt(user_id);
-//   console.log(req.body)
-//   return new Contact({ id: req.body })
-//     .fetch({
-//       require: true,
-//       //withRelated: ['user_id','type_of_business_id', 'type_of_contact_id']
-//     })
-//     .then(contact => {
-//       //let typeOfBusiness = parseInt(contact.type_of_business_id)
-//       console.log('put',contact)
-//       return res.json(contact)
-//     })
-// })
-
-router.get('/editContact/:id', (req, res)=>{
-  const contactId = req.params.id;
-  console.log('get route', contactId)
-  return new Contact({id: contactId})
-  .fetch({
-    require: true,
-    withRelated: ['user_id', 'type_of_business_id', 'type_of_contact_id']
-  })
-  .then((contact)=>{
-    const contactObj = contact.serialize();
-    return res.json(contactObj)
-  })
+  // const typeOfBusiness = parseInt(type_of_business);
+  // const typeOfContact = parseInt(type_of_contact);
+  // const userId = parseInt(user_id);
+  console.log(req.body)
+  return new Contact({ id: req.body })
+    .fetch({
+      require: true,
+      //withRelated: ['user_id','type_of_business_id', 'type_of_contact_id']
+    })
+    .then(contact => {
+      //let typeOfBusiness = parseInt(contact.type_of_business_id)
+      console.log('put', contact)
+      return res.json(contact)
+    })
 })
+
+// router.get('/editContact/:id', (req, res)=>{
+//   const contactId = req.params.id;
+//   console.log('get route', contactId)
+//   return new Contact({id: contactId})
+//   .fetch({
+//     require: true,
+//     withRelated: ['user_id', 'type_of_business_id', 'type_of_contact_id']
+//   })
+//   .then((contact)=>{
+//     const contactObj = contact.serialize();
+//     return res.json(contactObj)
+//   })
+
 module.exports = router;

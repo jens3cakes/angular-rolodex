@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../../services/backend.service'
 import { Router, ActivatedRoute } from '@angular/router';
+import { SessionService } from '../../services/session.service'
 
 @Component({
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss']
 })
-export class ContactsComponent {
+
+export class ContactsComponent implements OnInit {
   title: string = 'Contact Page'
   //show: boolean = false;
   contacts: Object[]=[];
-
+  
   contact:{
     id: number,
     first_name: string,
@@ -78,7 +80,7 @@ export class ContactsComponent {
     notes: string
   } = {
     id: this.contact.id,
-    first_name: "",
+    first_name: this.contact.first_name,
     last_name: this.contact.last_name,
     personal_email: this.contact.personal_email,
     personal_cellphone_number: this.contact.personal_cellphone_number,
@@ -98,25 +100,29 @@ export class ContactsComponent {
     type_of_contact: this.contact.type_of_contact,
     notes: this.contact.notes
   }
-
+  
+  ngOnInit() {
+    // let showContact = this.route.snapshot.paramMap.get('id');
+    // console.log(showContact)
+    let userId = this.session.getUser()
+    console.log(userId)
+    this.backend.getContacts(userId.id)
+      .then((resp:any) => {
+        this.contact = resp
+        console.log(this.contact)
+        return this.contact
+      })
+  }
 
 
 
   constructor(
     private backend: BackendService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private session: SessionService
   ) { }
 
-  ngOnInit() {
-    let showContact = this.route.snapshot.paramMap.get('id');
-    this.backend.getContacts(showContact)
-      .then((resp: Object[]) => {
-        this.contacts = resp
-        console.log(resp)
-        return this.contacts
-      })
-  }
 
   editButtonPushed(contact) {
     console.log(contact)

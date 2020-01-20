@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { BackendService } from '../../services/backend.service'
 import { SessionService } from '../../services/session.service'
 
@@ -9,7 +9,15 @@ import { SessionService } from '../../services/session.service'
 })
 
 
-export class AddContactComponent {
+export class AddContactComponent implements OnInit {
+
+  ngOnInit(){
+    // let userId = this.route.snapshot.paramMap.get('id')
+    // console.log(userId)
+    this.session.getUser()
+    console.log(this.session.getUser())
+  }
+
   addContactForm: {
     first_name: string,
     last_name: string,
@@ -56,9 +64,12 @@ export class AddContactComponent {
   constructor(
     private router: Router,
     private backend: BackendService,
-    private session: SessionService
+    private session: SessionService,
+    private route: ActivatedRoute,
+
   ) {
   }
+
   addContact(e) {
     e.preventDefault()
     console.log(this.session.user.id)

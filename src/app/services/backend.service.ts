@@ -18,8 +18,9 @@ export class BackendService {
   }
 
   getContacts(id) {
-    const contactUrl = this.baseUrl + 'api/contacts'
-    return this.http.get(contactUrl)
+    console.log(id)
+    const contactUrl = this.baseUrl + `api/contacts/${id}`
+    return this.http.get(contactUrl,)
       .toPromise()
   }
 
@@ -113,15 +114,14 @@ export class BackendService {
   editContactInfo(contact) {
     console.log(contact)
     const contactUrl = this.baseUrl + `api/contacts/editContact/${contact}`
-    // return this.http.post(contactUrl,{
-    //   id:contact
-    // })
-    return this.http.get(contactUrl)
-      .toPromise()
+    return this.http.post(contactUrl, {
+      id: contact
+    })
+    .toPromise()
   }
 
-  editContact(data){
-console.log(data)
+  editContact(data) {
+    console.log(data)
   }
 }
 

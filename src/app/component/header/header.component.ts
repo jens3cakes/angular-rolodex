@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private backend:BackendService
   ){
-    this.user = this.session.getUser(this.user);
+    this.user = this.session.getUser();
   }
   ngOnInit(){
 

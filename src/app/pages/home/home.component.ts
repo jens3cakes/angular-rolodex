@@ -3,6 +3,7 @@ import { BackendService } from '../../services/backend.service'
 import { Router } from "@angular/router";
 import { SessionService } from 'src/app/services/session.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { userInfo } from 'os';
 
 @Component({
   templateUrl: './home.component.html',
@@ -43,6 +44,7 @@ login(){
   console.log(this.loginFormData)
   return this.backend.login(this.loginFormData)
   .then(()=>{
+    console.log(this.loginFormData)
     this.session.getUser(this.loginFormData)
   })
   .then(() => {

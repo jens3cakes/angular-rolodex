@@ -7,7 +7,7 @@ const saltRounds = 12;
 
 router.get('/:username', (req, res)=> {
 const getUsernameParam = req.params.username;
-
+console.log('where am I using this')
 return new User()
 .where({ username:getUsernameParam })
 .fetch({
@@ -43,6 +43,7 @@ router.post('/', (req, res)=>{
         })
         .save()
         .then(customer =>{
+          console.log(customer.id)
           return res.json(customer);
         })
         .catch(err => {

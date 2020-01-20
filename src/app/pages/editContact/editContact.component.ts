@@ -39,7 +39,7 @@ export class EditContactComponent {
     notes: string
   } = {
       id: null,
-      first_name: this.contactServe.contact.first_name,
+      first_name: "",
       last_name: "",
       personal_email: "",
       personal_cellphone_number: "",
@@ -82,7 +82,7 @@ export class EditContactComponent {
     notes: string
   } = {
       id: this.contact.id,
-      first_name: this.contact.first_name,
+      first_name: "",
       last_name: "",
       personal_email: "",
       personal_cellphone_number: "",

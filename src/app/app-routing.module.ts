@@ -16,7 +16,7 @@ const routes: Routes = [
 { path: 'addContact', component: AddContactComponent},
 { path: 'registration', component: RegistrationComponent},
 { path: 'userProfile', component: UserProfileComponent},
-{ path: 'editContact/:id', component: EditContactComponent},
+{ path: 'editContact', component: EditContactComponent},
 { path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
