@@ -30,7 +30,7 @@
     "core-js": "^2.5.4",
     "docker": "^1.0.0",
     "dotenv": "^6.2.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-session": "^1.15.6",
     "knex": "^0.16.3",
     "nodemon": "^1.18.9",
